@@ -1,3 +1,5 @@
+import numpy as np
+
 class CostFunction:
     def f(self, a_last, y):
         raise NotImplementedError
