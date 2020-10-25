@@ -1,10 +1,35 @@
 import numpy as np
 
-class CostFunction:
-    def f(self, a_last, y):
+class Optimizer:
+    """
+    Attribut
+
+    :param trainable_layers: list
+        trainable layer dengan nilai bobot dan bias
+    """
+    def __init__(self, trainable_layers):
+        self.trainable_layers = trainable_layers
+
+    def init(self):
+        """
+        inisialisasi optimizer
+        """
         raise NotImplementedError
 
-    def grad(self, a_last, y):
+    def update(self, learning_rate, w_grad, b_grad, step):
+        """
+        Update parameter dari trainable layer
+
+        parameter
+        :param learning_rate: float
+            ukuran nilai dari lr digunakan untuk update tiap step
+        :param w_grad: np.array
+            gradient bobot
+        :param b_grad: np.array
+            gradient bias
+        :param step: int
+            berapa banyak update yang dilakukan
+        """
         raise NotImplementedError
         
         
